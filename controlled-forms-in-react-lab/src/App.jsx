@@ -6,7 +6,7 @@ import './App.css'
 const App = () => {
   return (
     <>
-      <h1>My Bookshelf</h1>
+      <h1>Video Game Collection</h1>
       <Bookshelf />
     </>
   );

@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Tiny5&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -11,6 +14,9 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  font-family: "VT323", monospace;
+    font-weight: 400;
 }
 
 a {
@@ -66,7 +72,7 @@ input {
   padding: 5px;
 }
 
-.bookshelfDiv {
+.videoGameshelfDiv {
   padding: 10px;
   width: 80%;
   display: flex;
@@ -85,7 +91,7 @@ input {
   padding: 20px;
 }
 
-.bookCardsDiv {
+.videoGameCardsDiv {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -93,7 +99,7 @@ input {
   margin-top: 20px;
 }
 
-.bookCard {
+.videoGameCard {
   display: flex;
   align-items: center;
   justify-content: center;

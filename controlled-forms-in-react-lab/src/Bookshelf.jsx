@@ -1,45 +1,45 @@
 import { useState } from 'react';
 
-const Bookshelf = () => {
+const VideoGameshelf = () => {
 
-    const [books, setBooks] = useState([
-        { title: 'Fourth Wing', author: 'Rebecca Yarros' },
-        { title: 'The Lion, the Witch and the Wardrobe', author: 'C.S. Lewis' },
+    const [videoGames, setVideoGames] = useState([
+        { title: 'Hitman: World of Assassination', author: 'I.O Interactive' },
+        { title: 'The Battle Of Polytopia', author: 'Midjiwan Ab' },
       ]);
 
-      const [newBook, setNewBook] = useState({
+      const [newVideoGame, setNewVideoGame] = useState({
         title: '',
         author: '',
       })
 
     return (
-        <div className="bookshelfDiv">
+        <div className="videoGameshelfDiv">
             <div className="formDiv">
-                <h3>Add a Book</h3>
+                <h3>Add a Video Game</h3>
                 <form onSubmit={handleSubmit}> {/* Prevents default behavior, the page refresh */}
                     <label htmlFor="title">Title: </label>
                         <input
                             id="title"
                             name="title"
-                            value={newBook.title} 
+                            value={newVideoGame.title} 
                             onChange={handleInputChange}
                             />
                     <label htmlFor="author">Author: </label>
                             <input
                             id="author"
                             name="author"
-                            value={newBook.author}
+                            value={newVideoGame.author}
                             onChange={handleInputChange}
                             />
-                    <button type='submit'>Submit a book</button>
+                    <button type='submit'>Submit a Video Game</button>
                 </form>
             </div>
-            <div className="bookCardsDiv">
-                {/* Book cards will display here */}
-                {books.map((book, index) => (
-                    <div className="bookCard" key={index}>
-                        <h4>{book.title}</h4> 
-                        <p>({book.author})</p>
+            <div className="videoGameCardsDiv">
+                {/* VideoGame cards will display here */}
+                {videoGames.map((videoGame, index) => (
+                    <div className="videoGameCard" key={index}>
+                        <h4>{videoGame.title}</h4> 
+                        <p>({videoGame.author})</p>
                     </div>
                 ))}
             </div>
@@ -48,24 +48,24 @@ const Bookshelf = () => {
 
     function handleInputChange(event) {
         // This was incredibly difficult for me to understand, but I know what it does
-        // Targets specific key in "New Book" object using the id and name of input fields to update the object in real time
-        setNewBook(
-            {... newBook, [event.target.name]: event.target.value}
+        // Targets specific key in "New VideoGame" object using the id and name of input fields to update the object in real time
+        setNewVideoGame(
+            {... newVideoGame, [event.target.name]: event.target.value}
         )
     }
 
     function handleSubmit(event) {
         // Prevents reload
         event.preventDefault()
-        // Updates Array of book objects with new book at the end
-        let updatedBooks = [... books, newBook]
-        setBooks(updatedBooks)
+        // Updates Array of videoGame objects with new videoGame at the end
+        let updatedVideoGames = [... videoGames, newVideoGame]
+        setVideoGames(updatedVideoGames)
         // Empty the input fiel  
-        setNewBook({
+        setNewVideoGame({
             title: '',
             author: ''
         })
     }
 }
 
-export default Bookshelf
+export default VideoGameshelf
